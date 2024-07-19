@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, #c31432, #240b36);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.calc {
+  background: #3a4452;
+  padding: 1.5rem;
+  border: 3px solid black;
+  border-radius: 10px;
+  box-shadow: 10px 10px 5px rgb(0, 0, 0);
+}
+
+.calc form input {
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  margin: 0.6rem;
+}
+
+.calc form .display {
+  display: flex;
+  justify-content: flex-end;
+  margin: 1rem 0;
+  background: #00000037;
+  border: 3px solid #f6c115;
+  border-radius: 5px;
+  padding: 0.5rem;
+  overflow: auto;
+}
+
+.calc form .display input {
+  text-align: right;
+  flex: 1;
+  font-size: 2.5rem;
+  box-shadow: none;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding-right: 0.5rem;
+}
+
+.calc form .buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  place-items: center;
+  gap: 0.5rem;
+}
+
+.calc form .buttons input {
+  height: 3rem;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  width: 90%;
+  background: #212832;
+}
+.buttons input:hover {
+  box-shadow: 0px 1px 1px 0px rgba(243, 150, 150, 0.507),
+    0px 2px 2px 0px rgba(234, 171, 108, 0.655),
+    0px 3px 3px 0px rgba(158, 245, 123, 0.562),
+    0px 5px 5px 0px rgba(109, 228, 236, 0.5),
+    0px 7px 7px 0px rgba(229, 92, 208, 0.484),
+    0px 10px 10px 0px rgba(133, 70, 220, 0.537);
+}
+
+form input.operator {
+  color: #f6c115;
+}
+
+form input.equal {
+  grid-column: span 2;
+  background: #f6c115 !important;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .calc form .buttons input {
+    height: 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  .calc form .display input {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .calc{
+    width: 100%;
+  }
+  .calc form .buttons input {
+    height: 2rem;
+    width: 90%;
+    font-size: 1rem;
+  }
+
+  .calc form .display input {
+    font-size: 1.5rem;
+  }
+}
