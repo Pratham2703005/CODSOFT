@@ -6,34 +6,19 @@ on:
       - main
 
 jobs:
-  deploy-landingpage:
+  deploy:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Build and Deploy Landing Page
+      - name: Setup Pages
         run: |
           mkdir -p public/TASK-2-LandingPage
-          cp -r TASK\ -\ 2\ LandingPage/* public/TASK-2-LandingPage/
-          touch public/.nojekyll
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-
-  deploy-calculator:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Build and Deploy Calculator
-        run: |
+          cp -r "TASK - 2 LandingPage"/* public/TASK-2-LandingPage/
           mkdir -p public/TASK-3-Calculator
-          cp -r TASK\ -\ 3\ Calculator/* public/TASK-3-Calculator/
+          cp -r "TASK - 3 Calculator"/* public/TASK-3-Calculator/
           touch public/.nojekyll
 
       - name: Deploy to GitHub Pages
@@ -41,3 +26,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
+        continue-on-error: true
